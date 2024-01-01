@@ -7,7 +7,7 @@ class Course {
     int enrolledStudents;
     String schedule;
 
-    public Course(String code, String title, String description, int capacity, String schedule) {
+    Course(String code, String title, String description, int capacity, String schedule) {
         this.code=code;
         this.title=title;
         this.description=description;
@@ -50,11 +50,11 @@ class Course {
 }
 
 class Student {
-    private int id;
-    private String name;
-    private List<Course> courses;
+    int id;
+    String name;
+    List<Course> courses;
 
-    public Student(int id, String name) {
+    Student(int id, String name) {
         this.id=id;
         this.name=name;
         this.courses=new ArrayList<>();
@@ -152,7 +152,7 @@ public class Task4 {
         }
     }
 
-    private Student findStudentById(int id) {
+    public Student findStudentById(int id) {
         for (Student s:students) {
             if (s.getId()==id) {
                 return s;
@@ -161,7 +161,7 @@ public class Task4 {
         return null;
     }
 
-    private Course findCourseByCode(String code) {
+    public Course findCourseByCode(String code) {
         for (Course c:courses) {
             if (c.getCode().equals(code)) {
                 return c;
@@ -189,7 +189,6 @@ public class Task4 {
         Student s3=new Student(1003, "Raju");
         Student s4=new Student(1004, "Pawankalyan");
         Student s5=new Student(1005, "vijay");
-        //adding student;
         Student s6=new Student(1006,"Ramesh");
         obj.registerStudent(s1);
         obj.registerStudent(s2);
